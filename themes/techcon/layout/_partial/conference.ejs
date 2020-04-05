@@ -1,0 +1,32 @@
+<% if (preview) { %>
+<article class="media">
+  <a href="<%- url_for(post.path) %>">
+    <figure class="media-left image">
+      <img class="is-rounded" src="<%= post.thumb %>">
+    </figure>
+  </a>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <a href="<%- url_for(post.path) %>">
+          <strong><%= post.title %></strong>
+        </a>
+        <a href="https://twitter.com/<%= post.twitter %>">
+          <small>@<%= post.twitter %></small>
+        </a>
+        <br>
+        <%- post.excerpt %>
+      </p>
+    </div>
+    <nav class="level">
+      <div class="level-left">
+        <span class="icon is-small"><i class="fas fa-tags"></i></span>
+        <%- list_tags(post.tags, {
+          show_count: false,
+          class: 'conference-tags'})
+        %>
+      </div>
+    </nav>
+  </div>
+</article>
+<% } %>

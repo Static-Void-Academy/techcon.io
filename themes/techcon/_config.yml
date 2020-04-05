@@ -2,9 +2,6 @@
 # Site & Theme Configuration
 #################################
 # Nav
-
 menu:
   Home: /
-  Locations: /locations
   Tags: /tags
-  About: /about
