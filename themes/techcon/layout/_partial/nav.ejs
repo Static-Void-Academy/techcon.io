@@ -1,0 +1,36 @@
+<nav class="navbar is-size-6" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <!-- Left side brand and burger settings -->
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        TechCon.io
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <!-- Page Menu & Search -->
+    <div id="nav-menu" class="navbar-end">
+      <% for (var i in theme.menu) { %>
+      <a class="navbar-item" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+      <% } %>
+      <a class="navbar-item" href="https://github.com/mvxt/techcon.io">
+        <span class="icon">
+          <i class="fab fa-github"></i>
+        </span>
+      </a>
+      <div class="navbar-item">
+        <form class="control has-icons-left">
+          <input class="input is-rounded search-field" type="search" title="Search" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </form>
+      </div>
+      <%- partial('_partial/search') %>
+    </div>
+  </div>
+</nav>

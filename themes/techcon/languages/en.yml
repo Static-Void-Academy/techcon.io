@@ -1,0 +1,14 @@
+about: About
+comments: Comments
+home: Home
+next: Next
+prev: Prev
+tag: Tag
+tagcloud: Tag Cloud
+tags: Tags
+theme_by: Theme by
+insight:
+  hint: 'Search for conferences...'
+  posts: 'Conferences'
+  tags: 'Tags'
+
