@@ -3,23 +3,23 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
+title: 'TechCon.io'
+subtitle: 'The Tech Conference Directory'
+description: "TechCon.io is a public directory and website aggregating all of the world's tech conferences, large or small, into one easy, convenient location to browse and search."
+keywords: 'tech,technology,software,software engineering,programming,coding,conference,conf,con,convention,docker,go,java,javascript,python,language,tool,code'
+author: 'Michael Vinh Xuan Thanh'
 language: en
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https:/www.techcon.io/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -33,7 +33,7 @@ skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
-default_layout: post
+default_layout: conference
 titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
@@ -41,7 +41,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
