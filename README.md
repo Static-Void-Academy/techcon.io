@@ -1,2 +1,4 @@
 # techcon.io
-Public website w/ all of the tech conferences in the world
+
+A convenient, public website listing all of the available tech conferences in the world.
+
