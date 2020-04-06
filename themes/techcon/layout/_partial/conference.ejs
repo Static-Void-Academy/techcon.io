@@ -29,4 +29,55 @@
     </nav>
   </div>
 </article>
+<% } else { %>
+<article class="media">
+  <% if (post.thumb) { %>
+  <a href="/<%- url_for(post.path) %>">
+    <figure class="media-left image is-128x128">
+      <img class="is-rounded" src="<%= post.thumb %>">
+    </figure>
+  </a>
+  <% } %>
+  <div class="media-content">
+    <div class="content">
+      <h1 class="is-size-4 page-header"><%= post.title %></h1>
+      <div class="level">
+        <div class="level-left">
+          <% if (post.twitter) { %>
+          <a href="https://twitter.com/<%= post.twitter %>">
+            <span class="icon is-small conference-links"><i class="fab fa-twitter"></i></span>
+          </a>
+          <% } %>
+          <% if (post.website) { %>
+          <a href="<%= post.website %>">
+            <span class="icon is-small conference-links"><i class="fas fa-link"></i></span>
+          </a>
+          <% } %>
+        </div>
+      </div>
+      <div>
+        <% if (post.attendance) { %>
+        <b>Attendance</b>: <%- post.attendance %>
+        <br>
+        <% } %>
+        <% if (post.ongoing.length != 0) { %>
+        <b>Ongoing</b>: <%- post.ongoing %>
+        <br>
+        <% } %>
+      </div>
+      <hr>
+      <%- post.content %>
+    </div>
+    <nav class="level">
+      <div class="level-left">
+        <span class="icon is-small"><i class="fas fa-tags"></i></span>
+        <%- list_tags(post.tags, {
+          show_count: false,
+          class: 'conference-tags'})
+        %>
+      </div>
+    </nav>
+  </div>
+</article>
+
 <% } %>
