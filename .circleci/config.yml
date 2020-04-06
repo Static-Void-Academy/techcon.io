@@ -1,0 +1,80 @@
+# Document Version: 1.0
+# author @mvxt
+
+#####################
+# Common Definitions
+#####################
+common:
+  - &project_dir "~/techcon.io"
+  - &bucket_name "s3://techcon.io"
+
+orbs:
+  aws-s3: circleci/aws-s3@1.0.15
+
+############
+# Workflows
+############
+workflows:
+  version: 2.1
+  build-deploy:
+    jobs:
+      - build
+      - approve-deploy:
+          type: approval
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+      - deploy:
+          context: static-void-prod
+          requires:
+            - approve-deploy
+          filters:
+            branches:
+              only: master
+
+##################
+# Job Definitions
+##################
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12.16.0
+    working_directory: *project_dir
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - techcon-v1-dependencies-{{ checksum "package.json" }}
+            - techcon-v1-dependencies-
+      - run:
+          name: Install node modules
+          command: |
+            yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: techcon-v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Build static hexo files
+          command: |
+            npx hexo generate
+      - persist_to_workspace:
+          root: .
+          paths: public
+      - store_artifacts:
+          path: public
+  deploy:
+    docker:
+      - image: circleci/python:2.7
+    working_directory: *project_dir
+    steps:
+      - attach_workspace:
+          at: .
+      - aws-s3/sync:
+          from: public
+          to: *bucket_name
+          overwrite: true 
+
