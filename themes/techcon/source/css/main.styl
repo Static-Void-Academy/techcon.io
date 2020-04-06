@@ -1,5 +1,6 @@
 global-reset()
 
+// Sidebar widgets
 .widget
   padding-bottom: 10px
 
@@ -9,6 +10,7 @@ global-reset()
 .widget-body
   margin: 5px 0 5px 0
 
+// Conference tags summary
 ul.conference-tags-list
   display: inline-block
   margin: 0
@@ -22,5 +24,15 @@ li.conference-tags-list-item
   color: color-grey
   display: inline
   margin-left: 8px
+
+// Tags page
+span.tag-list-count:before
+  content: ' ('
+span.tag-list-count:after
+  content: ')'
+
+// Misc
+.page-header
+  padding-bottom: 10px
 
 @import "_partial/insight"

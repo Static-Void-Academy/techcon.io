@@ -4,8 +4,9 @@ home: Home
 next: Next
 prev: Prev
 tag: Tag
-tagcloud: Tag Cloud
+tag_cloud: Tag Cloud
 tags: Tags
+all_tags: All Tags
 theme_by: Theme by
 insight:
   hint: 'Search for conferences...'

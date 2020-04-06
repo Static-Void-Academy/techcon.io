@@ -1,3 +1,4 @@
-<% page.posts.each(function(post) { %>
-  <%- partial('_partial/conference', {post: post, preview: true}) %>
-<% }) %>
+<div>
+  <h1 class="is-size-4 page-header"><%- __('all_tags') %></h1>
+  <%- list_tags() %>
+</div>
