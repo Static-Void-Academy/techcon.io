@@ -9,7 +9,7 @@ tags: Tags
 all_tags: All Tags
 theme_by: Theme by
 insight:
-  hint: 'Search for conferences...'
+  hint: 'Search conferences...'
   posts: 'Conferences'
   tags: 'Tags'
-
+  pages: 'Pages'
