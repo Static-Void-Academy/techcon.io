@@ -5,7 +5,7 @@
       <a class="navbar-item" href="/">
         TechCon.io
       </a>
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu">
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -13,24 +13,28 @@
     </div>
 
     <!-- Page Menu & Search -->
-    <div id="nav-menu" class="navbar-end">
-      <% for (var i in theme.menu) { %>
-      <a class="navbar-item" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
-      <% } %>
-      <a class="navbar-item" href="https://github.com/mvxt/techcon.io">
-        <span class="icon">
-          <i class="fab fa-github"></i>
-        </span>
-      </a>
-      <div class="navbar-item">
-        <form class="control has-icons-left">
-          <input class="input is-rounded search-field" type="search" title="Search" placeholder="Search conferences..." />
-          <span class="icon is-small is-left">
-            <i class="fas fa-search"></i>
-          </span>
-        </form>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <% for (var i in theme.menu) { %>
+        <a class="navbar-item" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+        <% } %>
       </div>
-      <%- partial('_partial/search') %>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/mvxt/techcon.io">
+          <span class="icon">
+            <i class="fab fa-github"></i>
+          </span>
+        </a>
+        <div class="navbar-item">
+          <form class="control has-icons-left">
+            <input class="input is-rounded search-field" type="search" title="Search" placeholder="Search conferences..." />
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </form>
+        </div>
+        <%- partial('_partial/search') %>
+      </div>
     </div>
   </div>
 </nav>

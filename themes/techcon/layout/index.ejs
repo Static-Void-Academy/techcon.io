@@ -1,4 +1,32 @@
-<h1 class="is-size-4 page-header"><%- __('all_confs') %></h1>
+<h1 class="is-size-3 page-header"><%- __('all_confs') %></h1>
 <% page.posts.each(function(post) { %>
   <%- partial('_partial/conference', {post: post, preview: true}) %>
 <% }) %>
+<hr/>
+<nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
+  <% if (page.current == 1 || page.prev == 0) { %>
+  <a class="pagination-previous" disabled><%- __('prev'); %></a>
+  <% } else { %>
+  <a class="pagination-previous" href="<%= page.prev_link %>"><%- __('prev'); %></a>
+  <% } %>
+  <% if (page.current == page.total || page.next == 0) { %>
+  <a class="pagination-next" disabled><%- __('next'); %></a>
+  <% } else { %>
+  <a class="pagination-next" href="<%= page.next_link %>"><%- __('next'); %></a>
+  <% } %>
+
+  <ul class="pagination-list">
+    <% var currentPrev = Math.max(page.current - 3, 1); %>
+    <% while (currentPrev < page.current) { %>
+      <% var href = (currentPrev == 1) ? "/" : "/page/"+currentPrev %>
+      <li><a class="pagination-link" href="<%- href %>" aria-label="Page <%- currentPrev %>" aria-current="page"><%- currentPrev %></a></li>
+      <% currentPrev++; %>
+    <% } %>
+    <li><a class="pagination-link is-current" aria-label="Page <%- page.current %>" aria-current="page"><%- page.current %></a></li>
+    <% var currentNext = page.current + 1 %>
+    <% while (currentNext <= Math.max(page.total, currentNext < page.current + 3)) { %>
+      <li><a class="pagination-link" href="/page/<%- currentNext %>" aria-label="Page <%- currentNext %>" aria-current="page"><%- currentNext %></a></li>
+      <% currentNext++; %>
+    <% } %>
+  </ul>
+</nav>
