@@ -4,12 +4,9 @@ thumb: https://pbs.twimg.com/profile_images/913421906157592576/NmxUeefn_400x400.
 twitter: kubecon_
 website: https://www.cncf.io/community/kubecon-cloudnativecon-events/
 tags:
-  - infrastructure
   - DevOps
-  - software
-  - cloud
   - Docker
-  - containerization
+  - containers
   - kubernetes
   - orchestration
   - CNCF

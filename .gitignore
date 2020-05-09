@@ -105,3 +105,5 @@ db.json
 public/
 .deploy*/
 
+
+.vercel
