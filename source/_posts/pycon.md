@@ -11,6 +11,6 @@ tags:
 ongoing: true
 attendance: ~3k (US)
 ---
-PyCon is an annual conference all about Python and its community. Speakers and companies all over the world deliver workshops about Python as well as speak about the exciting projects they're building with Python.
+PyCon is an annual conference all about [Python](https://www.python.org/) and its community. Speakers and companies all over the world deliver workshops about Python as well as speak about the exciting projects they're building with Python.
 <!-- more -->
 PyCon has various satellite conferences as well occurring in various different countries. See the complete list of all the countries hosting their own PyCon [on the primary website](https://pycon.org/).
